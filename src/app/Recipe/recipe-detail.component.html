@@ -1,0 +1,29 @@
+<h1>Details</h1>
+<div>
+    <dl>
+        <dt>Name</dt>
+        <dd> {{ recipe.name }}</dd>
+    </dl>
+
+    <form noValidate [formGroup]="detailForm" (ngSubmit)="edit()">
+        <div>
+            <input
+                type="submit"
+                value="Edit"
+            />
+        </div>
+    </form>
+    <dl>
+        <dt>Execution</dt>
+        <dd> {{ recipe.execution}}</dd>
+    </dl>
+
+    <form noValidate [formGroup]="detailForm" (ngSubmit)="edit()">
+        <div>
+            <input
+                type="submit"
+                value="Edit"
+            />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+
+<p>      <!-- Salta linha -->
+   <!-- <a routerLink="create">Create New</a>  -->
+</p>
+<table class="table justify-content-center" >
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Execução</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let recipe of recipes">
+            <td>{{ recipe.id }}</td>
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.execution }}</td>
+            <td>
+                <button type="button" class="btn btn-light">Saber mais</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
