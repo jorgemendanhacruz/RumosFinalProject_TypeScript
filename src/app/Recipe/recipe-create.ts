@@ -4,5 +4,5 @@ export interface RecipeCreate{
     difficultyLevel: number;
     execution: string;
     recipeCategory: number;
-    ingredients: string;
+    ingredient: string;
 }

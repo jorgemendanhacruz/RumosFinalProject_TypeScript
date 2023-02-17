@@ -65,20 +65,24 @@ export class RecipeCreateComponent implements OnInit {
 
     ngOnInit(): void {
         this.difficultyLevelService.getDifficultyLevel().subscribe({
-            next: difficultyLevel => this.difficultyLevels
+            next: difficultyLevels => this.difficultyLevels = difficultyLevels
         })
         this.ingredientService.getIngredient().subscribe({
-            next: ingredients => this.ingredients
+            next: ingredients => { 
+                console.log(ingredients)
+                this.ingredients = ingredients
+            }
         })
-        this.categoryService.getRecipeCategory().subscribe({
-            next: recipeCategory => this.categories
-        })
+        /*this.categoryService.getRecipeCategory().subscribe({
+            next: recipeCategories => this.categories = recipeCategories
+        })*/
     }
 
         create() {
             
             this.recipe = { ...this.recipe, ...this.createForm.value};
             console.log(this.recipe);
+            // TODO call API POST to create new recipe
         }
 }
 

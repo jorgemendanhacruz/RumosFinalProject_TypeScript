@@ -10,42 +10,30 @@
                      />
                      <div>
                      </div>
-                     <div>
-                         <input style="margin-top:10px"
-                             type="submit"
-                             value="Guardar"
-                         />
-                     </div>
                  </div>
                  <div>
                     <label>Tempo de execução</label>
                     <input style="margin-top:30px; margin-left:6px;"
                          type="'text"
-                         formControlName="name"
+                         formControlName="cookingTime"
                      />
                      <div>
                          
-                     </div>
-                     <div>
-                         <input style="margin-top:10px"
-                             type="submit"
-                             value="Guardar"
-                         />
                      </div>
                  </div>
                 <div>
                     <label>Nível de Dificuldade</label>
                     <select style="margin-top:30px; margin-left:6px;" formControlName="difficultyLevel">
-                            <option *ngFor="let difficultyLevel of difficultyLevels" value="{{ difficultyLevel.difficultyLevel}}">
-                             {{ difficultyLevel.difficultyLevel }}
+                            <option *ngFor="let difficultyLevel of difficultyLevels" value="{{ difficultyLevel.id}}">
+                             {{ difficultyLevel.level }}
                             </option>
                     </select>
                 </div>
                 <div>
                     <label>Ingredientes</label>
-                    <select style="margin-top:30px; margin-left:62px;" formControlName="ingredients">
-                            <option *ngFor="let ingredient of ingredients" value="{{ ingredient.ingredientName }}">
-                             {{ ingredient.ingredientName }}
+                    <select style="margin-top:30px; margin-left:62px;" formControlName="ingredient" multiple>
+                            <option *ngFor="let ingredient of ingredients" value="{{ ingredient.id }}">
+                             {{ ingredient.ing }}
                             </option>
                     </select>
                 </div>
@@ -59,19 +47,13 @@
                      <div>
                          
                      </div>
-                     <div>
-                         <input
-                            style="margin-top:10px"    
-                            type="submit"
-                             value="Guardar"
-                         />
-                     </div>
                  </div>
                 <div>
                     <input 
                         style="margin-top:40px; margin-left:150px"
                         type="submit"
                         value="Criar"
+                        (click)="create()"
                     />
                 </div>
             </div>
